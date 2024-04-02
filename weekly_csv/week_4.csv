@@ -5,7 +5,6 @@ tested on
 ex bug: clicking exit doesn't exit
 ex user case: timers take too long",What you expect to happen,What actually happened,yes/no,Yes/no,"Your name
 ex: Kevin Chaja"
-,,,,,,,,
 1,25-Feb,Tutorial UI,No highlight in opponents empty card slots,Highlight in oppnents empty card slot to attack directly into opponent health,No highlight in certain opponents empty card slots,no,no,Rmata Muadthong
 2,25-Feb,Main menu UI,Shows tutorial on main menu page,"After completing the initial tutorial, I am not encountering the pop-up menu .",No first tutorial pop up menu,yes,no,Rmata Muadthong
 3,25-Feb,UI,Highlighting any highlightable text,More readable highlight color contrasting text color,Yellow highlight on a bright orange text,no,no,Rmata Muadthong
@@ -13,7 +12,7 @@ ex: Kevin Chaja"
 5,25-Feb,Main menu UI,Exiting addd friend menu doesn't exit,Exit add friend menu to main menu,Main page turns into blur image ,yes,yes,Rmata Muadthong
 6,25-Feb,Login,Has to began login process after refresh page,Refresh page,Has to go through loginprocess everytime user hit refresh,yes,no,Rmata Muadthong
 7,25-Feb,Settings option,Difficult to adjust audio setting,Able to hear the audio difference while adjusting before saving,Has to save audio setting in order to hear the changes,yes,no,Rmata Muadthong
-8,25-Feb,Language change,langauge doesnÕt fully change,Language in menu text to be change into desire language,Only some menu text changes into different language,yes,no,Rmata Muadthong
+8,25-Feb,Language change,langauge doesnï¿½t fully change,Language in menu text to be change into desire language,Only some menu text changes into different language,yes,no,Rmata Muadthong
 9,25-Feb,Settings option,clicking exit doesn't exit,"To be able to exit using ""x"" button","No changes, only able to leave through save or cancel button",yes,no,Rmata Muadthong
 10,25-Feb,Decker build/ card selection,"""How to Obtain"" button doesn't work",New pop up that shows how to obtain card,Nothing happens,yes,yes,Rmata Muadthong
-,25-Feb,Decker build/ card selection,"""Related card"" button doesn't work",New pop up that shows related card,Nothing happens,yes,yes,Rmata Muadthong
+11,25-Feb,Decker build/ card selection,"""Related card"" button doesn't work",New pop up that shows related card,Nothing happens,yes,yes,Rmata Muadthong
