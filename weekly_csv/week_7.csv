@@ -1,6 +1,4 @@
-id,name,salary,department
-1,john,2000,sales
-2,Andrew,5000,finance
-3,Mark,8000,hr
-4,Rey,5000,marketing
-5,Tan,4000,IT
+Test #,Build #,Category,Test Case,Expected Result,Actual Result,Repeatable?,Blocker?,Test Owner
+1,3/17/24,UI,Window size not fitted,window size fitted to screen,"didn’t fit, zoomed in",yes,no,Rmata Muadthong
+2,3/17/24,login,can’t login,window closed to authenticate,window close then didn’t log in,yes,yes,Rmata Muadthong
+3,3/17/24,login,not connecting to server,connection to server,not connected to server,yes,yes,Rmata Muadthong

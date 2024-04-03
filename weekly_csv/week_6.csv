@@ -1,6 +1,4 @@
-id,name,salary,department
-1,john,2000,sales
-2,Andrew,5000,finance
-3,Mark,8000,hr
-4,Rey,5000,marketing
-5,Tan,4000,IT
+Test #,Build #,Category,Test Case,Expected Result,Actual Result,Repeatable?,Blocker?,Test Owner
+1,3/10/24,Settings,Bug Case: The X widget in Settings is not responsive,Properly highlight where to click,Highlight is offset slightly,Yes,No,Rmata Muadthong
+2,3/10/24,Adventure Mode,Bug Case: Cannot leave screen and clicks do not register,"Be able to play adventure mode or if not ready, be able to back out",User is stuck in the adventure mode screen and has to close the game to get out of Adventure Mode,Yes,Yes,Rmata Muadthong
+3,3/10/24,Leaderboards,Bug Case: Search bar is not working and X doesn’t work,Search bar should search players and X should clear the search bar,The bar does not search players and cannot click the X to clear the search bar,Yes,No,Rmata Muadthong

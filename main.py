@@ -20,7 +20,7 @@ file_paths = [
 for file_path in file_paths:
     print(f"File: {file_path}")
     try:
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path, encoding='ISO-8859-1')
         print(df.to_string())
         print("\n")
     except FileNotFoundError:
