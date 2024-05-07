@@ -1,4 +1,4 @@
 Test #,Build #,Category,Test Case,Expected Result,Actual Result,Repeatable?,Blocker?,Test Owner
-1,3/3/24,Edit Profile Page,"""Player Frame"" button doesn't work","Clicking ""Player Frame"" leads to player frames",Nothing happens,yes,no,Rmata Muadthong
-2,3/3/24,Edit Profile Page,"""Player Title"" button doesn't work","Clicking ""Player Title"" leads to player titles",Nothing happens,yes,no,Rmata Muadthong
-3,3/3/24,Edit Profile Page,"""Player Banner"" button doesn't work","Clicking ""Player Banner"" leads to player banners",Nothing happens,yes,no,Rmata Muadthong
+1,4/6/24,Battle,Usercase,Be able to read the card details after using them in battle.,Can only see the list of cards used in battle but not the card details.,yes,no,Rmata Muadthong
+2,4/7/24,Battle,Usercase,"When a Fire Croc's card activation event occurs during battle, the AI waits for the User to select an option then proceeds with their turn.","When Fire Croc's card activation prompt popped up, the AI kept attacking before I chose an option.",yes,no,Rmata Muadthong
+3,4/8/24,Battle,Fire Croc Counter Attack prompt bug,"Two Fire Crocs on the field, one died and prompt comes up. Second died before choosing an option on prompt one, but still able to use the card effect of the second Fire Croc.","When the first Fire Croc's Counter prompt popped up and the second one died before choosing an option, the turn ended without registering the second Fire Croc counter.",yes,no,Rmata Muadthong
