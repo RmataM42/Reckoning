@@ -36,7 +36,18 @@ def print_collections():
     collections = db.list_collection_names()
     print(collections)
 
+def print_collection_1():
+    collections = db["collection 1"]
+    for x in collections.find():
+        print(x)
+
+def print_collection_2():
+    collections = db["collection 2"]
+    for x in collections.find():
+        print(x)
 
 # print_files()
 # print_collections()
+# print_collection_1()
+# print_collection_2()
     
