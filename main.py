@@ -6,6 +6,8 @@ import pandas as pd
 client = MongoClient("mongodb://localhost:27017/")
 # Get the reckoning database
 db = client["reckoning"]
+collection1 = db["collection 1"]
+collection2 = db["collection 2"]
 
 
 # File paths
@@ -37,17 +39,40 @@ def print_collections():
     print(collections)
 
 def print_collection_1():
-    collections = db["collection 1"]
-    for x in collections.find():
+    for x in collection1.find():
         print(x)
 
 def print_collection_2():
-    collections = db["collection 2"]
-    for x in collections.find():
+    for x in collection2.find():
         print(x)
 
+from pymongo import MongoClient
+
+# Connect to MongoDB locally
+client = MongoClient("mongodb://localhost:27017/")
+# Get the reckoning database
+db = client["reckoning"]
+collection1 = db["collection 1"]
+collection2 = db["collection 2"]
+
+def print_my_work():
+    query = {"Test Owner": "Rmata Muadthong"}
+    count = 0
+    printed_ids = set()
+    for collection in [collection1, collection2]:
+        my_work = collection.find(query)
+        for x in my_work:
+            if x['_id'] not in printed_ids:
+                # print(x)
+                printed_ids.add(x['_id'])
+                count += 1
+    print("\nTotal: ", count)
+    print(printed_ids)
+
+# -------------------------------------
 # print_files()
 # print_collections()
 # print_collection_1()
 # print_collection_2()
+print_my_work()
     
