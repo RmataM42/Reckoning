@@ -46,33 +46,41 @@ def print_collection_2():
     for x in collection2.find():
         print(x)
 
-from pymongo import MongoClient
-
-# Connect to MongoDB locally
-client = MongoClient("mongodb://localhost:27017/")
-# Get the reckoning database
-db = client["reckoning"]
-collection1 = db["collection 1"]
-collection2 = db["collection 2"]
-
+# my work collection 1
 def print_my_work():
     query = {"Test Owner": "Rmata Muadthong"}
     count = 0
-    printed_ids = set()
-    for collection in [collection1, collection2]:
+    # printed_names = set()
+    for collection in [collection1]:
         my_work = collection.find(query)
         for x in my_work:
-            if x['_id'] not in printed_ids:
-                # print(x)
-                printed_ids.add(x['_id'])
+            # name = x.get("Test case")
+            # if name not in printed_names:
+                print(x)
+                # printed_names.add(name)
                 count += 1
     print("\nTotal: ", count)
-    print(printed_ids)
+    # sees test case stores in set: duplicate_test_case
+    # print(printed_names)
+
+def print_test_case():
+    count = 0
+    for collection in [collection1, collection2]:
+        for test in collection.find({}, {"Test owner":1}):
+            print(test.get("Test owner"))
+            count += 1
+    print("\nTotal: ", count)
+
+def print_repeatable():
+    print('j')
+
 
 # -------------------------------------
 # print_files()
 # print_collections()
 # print_collection_1()
 # print_collection_2()
-print_my_work()
+# print_my_work()
+# print_test_case()
+print_repeatable()
     
