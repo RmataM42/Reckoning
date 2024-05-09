@@ -96,6 +96,30 @@ def print_repeatable():
     total_count = count1 + count2
     print(f"\nTotal repeatable count: {total_count}\nRepeatable collection 1: {count1}\nRepeatable collection 2: {count2}")
 
+def print_blocker():
+    query1 = {"Blocker?": {"$regex": "^\s*Yes\s*$", "$options": "i"}}
+    # "$regex": "^\s*Yes\s*$" means the value starts (^) and ends ($) with "Yes",
+    # and there can be any amount of whitespace (\s*) before and after "Yes"
+    # "$options": "i" makes the regex case-insensitive
+    query2 = {
+        "Blocker?": {"$regex": "^\s*yes\s*$", "$options": "i"},
+        "Test Owner": {"$not": {"$eq": "Rmata Muadthong"}}
+    }
+    count1 = 0
+    count2 = 0
+    for collection1_loop in [collection1]:
+        blocker = collection1_loop.find(query1)
+        for x in blocker:
+            print(x)
+            count1 += 1
+    print("\n-----------------------\n")
+    for collection2_loop in [collection2]:
+        blocker = collection2_loop.find(query1)
+        for x in blocker:
+            print(x)
+            count2 += 1
+    total_count = count1 + count2
+    print(f"\nTotal Blocker Bugs count: {total_count}\nBlocker Bugs collection 1: {count1}\nBlocker Bugs collection 2: {count2}")
 
 
 # -------------------------------------
@@ -105,5 +129,6 @@ def print_repeatable():
 # print_collection_2()
 # print_my_work()
 # print_test_case()
-print_repeatable()
+# print_repeatable()
+print_blocker()
     
