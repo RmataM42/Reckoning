@@ -146,6 +146,14 @@ def print_3_19_24():
     total_count = count1 + count2
     print(f"\nTotal 3/19/24 build count: {total_count}\n3/19/24 build collection 1: {count1}\n3/19/24 build collection 2: {count2}")
 
+def print_3_case():
+    # for collection in collection2:
+    first_doc = collection2.find_one()
+    total_count = collection2.count_documents({})
+    middle_count = total_count // 2
+    middle_doc = collection2.find().limit(1).skip(middle_count).next()
+    last_doc = collection2.find().sort([("_id", -1)]).limit(1)
+    print(f"\nFirst case:\n\n{first_doc}\n\nMiddle case: \n\n{middle_doc}\n\nFinal case:\n\n{next(last_doc)}\n")
 # -------------------------------------
 # print_files()
 # print_collections()
@@ -155,6 +163,7 @@ def print_3_19_24():
 # print_test_case()
 # print_repeatable()
 # print_blocker()
-print_3_19_24()
+# print_3_19_24()
+print_3_case()
 
     
