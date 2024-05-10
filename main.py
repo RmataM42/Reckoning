@@ -121,6 +121,30 @@ def print_blocker():
     total_count = count1 + count2
     print(f"\nTotal Blocker Bugs count: {total_count}\nBlocker Bugs collection 1: {count1}\nBlocker Bugs collection 2: {count2}")
 
+def print_3_19_24():
+    query1 = {"Build #": {"$regex": ".*3\s*\/\s*19\s*\/\s*24.*", "$options": "i"}}
+    # "$regex": "^\s*Yes\s*$" means the value starts (^) and ends ($) with "Yes",
+    # and there can be any amount of whitespace (\s*) before and after "Yes"
+    # "$options": "i" makes the regex case-insensitive
+    query2 = {
+        "Build #": {"$regex": ".*3\s*\/\s*19\s*\/\s*24.*", "$options": "i"},
+        "Test Owner": {"$not": {"$eq": "Rmata Muadthong"}}
+    }
+    count1 = 0
+    count2 = 0
+    for collection1_loop in [collection1]:
+        march = collection1_loop.find(query1)
+        for x in march:
+            print(x)
+            count1 += 1
+    print("\n-----------------------\n")
+    for collection2_loop in [collection2]:
+        march = collection2_loop.find(query1)
+        for x in march:
+            print(x)
+            count2 += 1
+    total_count = count1 + count2
+    print(f"\nTotal 3/19/24 build count: {total_count}\n3/19/24 build collection 1: {count1}\n3/19/24 build collection 2: {count2}")
 
 # -------------------------------------
 # print_files()
@@ -130,5 +154,7 @@ def print_blocker():
 # print_my_work()
 # print_test_case()
 # print_repeatable()
-print_blocker()
+# print_blocker()
+print_3_19_24()
+
     
