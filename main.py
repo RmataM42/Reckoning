@@ -154,6 +154,15 @@ def print_3_case():
     middle_doc = collection2.find().limit(1).skip(middle_count).next()
     last_doc = collection2.find().sort([("_id", -1)]).limit(1)
     print(f"\nFirst case:\n\n{first_doc}\n\nMiddle case: \n\n{middle_doc}\n\nFinal case:\n\n{next(last_doc)}\n")
+
+def retrieve_chaja():
+    query = {"Test Owner": {"$regex": "^\s*Kevin Chaja\s*$", "$options": "i"}}
+    count = 0
+    chaja = collection2.find(query)
+    for x in chaja:
+        print(x)
+        count += 1
+    print(f"\nTotal build by Kevin Chaja: {count}")
 # -------------------------------------
 # print_files()
 # print_collections()
@@ -164,6 +173,7 @@ def print_3_case():
 # print_repeatable()
 # print_blocker()
 # print_3_19_24()
-print_3_case()
+# print_3_case()
+retrieve_chaja()
 
     
