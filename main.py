@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import csv
 import pandas as pd
-
+import os 
 # Connect to MongoDB locally
 client = MongoClient("mongodb://localhost:27017/")
 # Get the reckoning database
@@ -155,7 +155,7 @@ def print_3_case():
     last_doc = collection2.find().sort([("_id", -1)]).limit(1)
     print(f"\nFirst case:\n\n{first_doc}\n\nMiddle case: \n\n{middle_doc}\n\nFinal case:\n\n{next(last_doc)}\n")
 
-def retrieve_chaja():
+def print_chaja():
     query = {"Test Owner": {"$regex": "^\s*Kevin Chaja\s*$", "$options": "i"}}
     count = 0
     chaja = collection2.find(query)
@@ -163,6 +163,24 @@ def retrieve_chaja():
         print(x)
         count += 1
     print(f"\nTotal build by Kevin Chaja: {count}")
+
+def export_chaja():
+    query = {"Test Owner": {"$regex": "^\s*Kevin Chaja\s*$", "$options": "i"}}
+    chaja_docs = collection2.find(query)
+
+    # Define the CSV file path
+    csv_file = "kevin_chaja_documents.csv"
+
+    with open(csv_file, "w", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=chaja_docs[0].keys())
+        writer.writeheader()
+        for doc in chaja_docs:
+            writer.writerow(doc)
+
+    if os.path.exists(csv_file):
+        print(f"\nCSV file '{csv_file}' generated successfully.\n")
+    else:
+        print("Failed to generate CSV file.")
 # -------------------------------------
 # print_files()
 # print_collections()
@@ -174,6 +192,7 @@ def retrieve_chaja():
 # print_blocker()
 # print_3_19_24()
 # print_3_case()
-retrieve_chaja()
+# print_chaja()
+export_chaja()
 
     
